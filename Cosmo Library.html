@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosmoLibrary</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    padding-bottom: 60px; /* Add padding to bottom of body to prevent overlap with navbar */
+    padding-top: 60px; /* Add padding to top of body to prevent content from being hidden behind the navbar */
+}
+
+        .header-fixed {
+            background-image: url(Images/cosmos_planets_4k.jpg); /* Replace 'background_image.jpg' with your image path */
+            background-size: cover;
+            padding: 20px; /* Add padding to create space around the heading */
+            text-align: center; /* Align the text to the center */
+            color: #f6f9f7;
+            height: 100vh; /* Set a fixed height for the header */
+            display: flex;
+            justify-content: center; /* Align the content to the center */
+            align-items: top; /* Align the content to the center */
+            position: fixed; /* Fix the header position */
+            top: 0; /* Position it at the top */
+            width: 100%; /* Ensure it spans the entire width */
+            transition: opacity 1s; /* Add a transition effect for fading */
+            z-index: 999; /* Ensure it appears above other elements */
+            font-family: 'Algerian', sans-serif; /* Change font family to Algerian or similar */
+            font-size: 40px; /* Increase font size */
+        }
+
+        .header-hidden {
+            opacity: 0;
+        }
+
+        nav {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 10px 0;
+    position: fixed; /* Fix the navbar position */
+    top: 0; /* Position it at the top */
+    width: 100%; /* Ensure it spans the entire width */
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin-top: 150px; /* Adjust margin-top to ensure content starts below header */
+        }
+
+        #video-options, #video-content, #articles {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    border-radius: 10px; /* Add border radius for a space-like feel */
+    margin: 0; /* Remove margin */
+    padding: 20px; /* Increase padding for content spacing */
+    height: 100vh; /* Set height to 100% of viewport height */
+}
+
+.section {
+    margin-top: 150px; /* Adjust margin-top to ensure content starts below header */
+}
+
+        #video-content {
+            opacity: 1; /* Ensure video content is fully visible */
+            transition: opacity 2s; /* Increase transition duration for fading */
+        }
+
+        .article {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .article-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1; /* Ensure it appears above other content */
+        }
+
+        .article-actions button {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+            border: none;
+            color: #000;
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .article-actions button:hover {
+            background-color: rgba(255, 255, 255, 0.7); /* Lighter semi-transparent white background on hover */
+        }
+        @media only screen and (max-width: 768px) {
+    .header-fixed {
+        font-size: 30px; /* Decrease font size for smaller screens */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Reduce margin between nav items for smaller screens */
+    }
+
+    section {
+        margin-top: 100px; /* Adjust margin-top for smaller screens */
+    }
+
+    #video-options, #video-content, #articles {
+        margin-bottom: 15px; /* Reduce margin between sections for smaller screens */
+        padding: 15px; /* Decrease padding for content spacing */
+    }
+
+    .article-actions {
+        top: 5px; /* Adjust top position of article actions for smaller screens */
+        right: 5px; /* Adjust right position of article actions for smaller screens */
+    }
+
+    .article-actions button {
+        padding: 3px 6px; /* Decrease padding of article action buttons for smaller screens */
+    }
+
+    @media only screen and (max-width: 768px) {
+    .header-fixed {
+        font-size: 30px; /* Decrease font size for smaller screens */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Reduce margin between nav items for smaller screens */
+    }
+
+    section {
+        margin-top: 100px; /* Adjust margin-top for smaller screens */
+    }
+
+    #video-options, #video-content, #articles {
+        margin-bottom: 15px; /* Reduce margin between sections for smaller screens */
+        padding: 15px; /* Decrease padding for content spacing */
+        width: calc(100% - 30px); /* Make the width of the article section 100% of the screen width minus padding */
+        max-width: none; /* Remove max-width limitation */
+    }
+
+    .article-actions {
+        top: 5px; /* Adjust top position of article actions for smaller screens */
+        right: 5px; /* Adjust right position of article actions for smaller screens */
+    }
+
+    .article-actions button {
+        padding: 3px 6px; /* Decrease padding of article action buttons for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header-fixed {
+        font-size: 30px; /* Decrease font size for smaller screens */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Reduce margin between nav items for smaller screens */
+    }
+
+    section {
+        margin-top: 100px; /* Adjust margin-top for smaller screens */
+    }
+
+    #video-options, #video-content, #articles {
+        margin-bottom: 15px; /* Reduce margin between sections for smaller screens */
+        padding: 15px; /* Decrease padding for content spacing */
+        width: 100vw; /* Set width to 100% of viewport width */
+        height: 100vh; /* Set height to 100% of viewport height */
+    }
+
+    .article-actions {
+        top: 5px; /* Adjust top position of article actions for smaller screens */
+        right: 5px; /* Adjust right position of article actions for smaller screens */
+    }
+
+    .article-actions button {
+        padding: 3px 6px; /* Decrease padding of article action buttons for smaller screens */
+    }
+}
+
+
+}
+
+    </style>
+</head>
+<body>
+
+<header class="header-fixed" id="header">
+    <h1>CosmoLibrary</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Galaxy_Trekker.html">Galaxy Trekker</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="star-maps.html">Star Maps</a></li>
+        <li><a href="Quiz.html">Quiz Time</a></li>
+        <li><a href="login.html">Login</a></li>
+        
+    </ul>
+</nav>
+
+<section id="video-options" class="space-theme">
+    <h2>Video Options</h2>
+    <div class="button-container">
+        <button onclick="displayVideos('planets')">Videos on Planets</button>
+        <button onclick="displayVideos('stars')">Videos on Stars</button>
+        <button onclick="displayLivestreams()">Livestreams</button>
+        <button onclick="displayVideos('facts')">Astonishing Facts</button>
+    </div>
+    <form id="search-form">
+        <input type="text" id="search-bar" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </form>
+    <div class="livestream-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=txZtt73P2K4&t=16s&pp=ygUJbmFzYSBsaXZl" frameborder="0" allowfullscreen></iframe>
+        <span></span><iframe width="560" height="315" src="https://www.youtube.com/live/2nVKbW59viQ?si=IQHVy0pQdnt4T6Xh" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/live/2nVKbW59viQ?si=IQHVy0pQdnt4T6Xh" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/live/2nVKbW59viQ?si=IQHVy0pQdnt4T6Xh" frameborder="0" allowfullscreen></iframe>
+    </div>
+     
+
+</section>
+
+
+
+
+<section id="articles">
+    <section class="article">
+        <h2>Article 1</h2>
+        <div class="article-actions">
+            <button onclick="bookmarkArticle('article1')">Bookmark</button>
+            <button onclick="likeArticle('article1')">Like</button>
+            <button onclick="shareArticle('article1')">Share</button>
+        </div>
+        <iframe src="https://www.example.com/article1" width="100%" height="600px"></iframe>
+    </section>
+
+    <section class="article">
+        <h2>Article 2</h2>
+        <div class="article-actions">
+            <button onclick="bookmarkArticle('article2')">Bookmark</button>
+            <button onclick="likeArticle('article2')">Like</button>
+            <button onclick="shareArticle('article2')">Share</button>
+        </div>
+        <iframe src="https://www.example.com/article2" width="100%" height="600px"></iframe>
+    </section>
+</section>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('header-hidden');
+        } else {
+            header.classList.remove('header-hidden');
+        }
+    });
+
+    function displayVideos(category) {
+        // Logic to fetch and display videos based on the selected category
+    }
+
+    function displayLivestreams() {
+        // Logic to fetch and display livestreams
+    }
+
+    function bookmarkArticle(articleId) {
+        // Logic to bookmark the article with given ID
+    }
+
+    function likeArticle(articleId) {
+        // Logic to like the article with given ID
+    }
+
+    function shareArticle(articleId) {
+        // Logic to share the article with given ID
+    }
+
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        let searchTerm = document.getElementById('search-bar').value;
+        // Logic to fetch and display search results based on searchTerm
+    });  
+</script>
+
+</body>
+</html>

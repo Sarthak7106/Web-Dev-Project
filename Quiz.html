@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Quiz</title>
+<link rel="stylesheet" href="Quiz.css">
+</head>
+<body>
+
+<header>
+    <h1> Astro Challenge</h1>
+</header>
+
+<main>
+    <section id="quiz">
+        <h2>Select a Quiz Category</h2>
+        <div class="quiz-categories">
+            <div class="quiz-category" onclick="showQuestions(spaceMissionsQuiz)">
+                <h3>Space Missions Quiz</h3>
+            </div>
+            <div class="quiz-category" onclick="showQuestions(planetsQuiz)">
+                <h3>Planets Quiz</h3>
+            </div>
+            <div class="quiz-category" onclick="showQuestions(starsQuiz)">
+                <h3>Stars Quiz</h3>
+            </div>
+        </div>
+        <div id="question-container" class="hidden"></div>
+        <button id="submit-btn">Submit Answer</button>
+        <div id="result"></div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Space Quiz. All rights reserved.</p>
+</footer>
+
+<script src="quiz.js"></script>
+</body>
+</html>

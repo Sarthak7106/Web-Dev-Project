@@ -1,0 +1,144 @@
+
+/* Reset default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, serif, sans-serif;
+    background-color: #111; /* Dark background */
+    color: #fff;
+}
+
+header {
+    background-image: url('Images/404-bg.jpg'); /* Background image */
+
+    position: rel;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, serif, sans-serif;
+}
+
+#main-heading {
+    font-size: 75px;
+    transition: font-size 0.3s ease-in-out; 
+    font-family: 'Algerian', sans-serif;/* Add transition property directly to font-size */
+
+}
+
+.fixed-heading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #111; /* Dark background */
+    padding: 20px;
+}
+
+/* Center the main heading */
+header h1 {
+    margin: 0 auto; /* Center horizontally */
+    max-width: 600px; /* Limit width to prevent stretching */
+     /* Increase font size for larger screens */
+    font-size: 100px;
+}
+nav ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Larger font size */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #ffd700; /* Yellow on hover */
+}
+
+.sub-navbar {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: transparent; /* Make the background transparent */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 500px; /* Adjust the margin-top to position it below the heading */
+}
+
+
+.sub-navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sub-navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.sub-navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar ul li a:hover {
+    color: #ffd700; /* Yellow on hover */
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header stays above other content */
+}
+
+.fixed-sub-navbar {
+    display: block; /* Show the sub-navbar when scrolled */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ffd700; /* Yellow heading */
+}
+/* Apply CSS styles to ensure sections display vertically */
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 50px; /* Adjust font size for smaller screens */
+    }
+
+    nav ul {
+        top: 10px; /* Adjust top position */
+        right: 10px; /* Adjust right position */
+    }
+
+    .sub-navbar {
+        top: 80px; /* Adjust top position */
+    }
+}

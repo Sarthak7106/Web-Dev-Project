@@ -1,0 +1,521 @@
+@keyframes shooting-star {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(110%);
+        opacity: 0;
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: shooting-star 3s linear infinite;
+}
+
+/* Position stars around the heading */
+.star:nth-child(1) {
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+}
+
+.star:nth-child(2) {
+    top: calc(50% + 100px);
+    left: calc(50% + 200px);
+}
+
+.star:nth-child(3) {
+    top: calc(50% - 150px);
+    left: calc(50% + 50px);
+}
+
+.star:nth-child(4) {
+    top: calc(50% + 150px);
+    left: calc(50% - 50px);
+}
+
+.star:nth-child(5) {
+    top: calc(50% - 50px);
+    left: calc(50% - 150px);
+}
+
+.star:nth-child(6) {
+    top: calc(50% + 50px);
+    left: calc(50% + 150px);
+}
+
+.star:nth-child(7) {
+    top: calc(50% - 150px);
+    left: calc(50% - 50px);
+}
+
+.star:nth-child(8) {
+    top: calc(50% + 150px);
+    left: calc(50% + 50px);
+}
+.star:nth-child(9) {
+    top: calc(50% - 50px);
+    left: calc(50% - 150px);
+}
+
+.star:nth-child(10) {
+    top: calc(50% + 50px);
+    left: calc(50% + 150px);
+}
+
+.star:nth-child(11) {
+    top: calc(50% - 150px);
+    left: calc(50% - 50px);
+}
+
+.star:nth-child(12) {
+    top: calc(50% + 150px);
+    left: calc(50% + 50px);
+}
+
+body {
+    cursor: none;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+#rocket-cursor {
+    position: fixed;
+    width: 40px;
+    height: auto;
+    pointer-events: none; /* Ensure the cursor doesn't interfere with mouse events */
+    z-index: 9999; /* Ensure the cursor appears above other elements */
+    display: none; /* Initially hide the cursor */
+}
+
+header {
+    background-color: #111;
+    padding: 20px;
+}
+
+nav {
+    background-color: #222; /* Darker background color */
+    padding: 30px 20px; /* Increased padding for top and bottom */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px; /* Increased margin between nav items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make font bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+nav ul li a:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#gallery {
+    background-color: ;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#maps {
+    background-color: ;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#starMap {
+    background-color: #002f66;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #336699;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0059b3;
+}
+#gif-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width:100 ;
+            height: auto;
+            z-index: -1; /* to ensure the GIF stays in the background */
+        }
+        .login-btn {
+    padding: 10px 20px;
+    background-color: #336699;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+}
+
+.login-btn:hover {
+    background-color: #0059b3;
+}
+
+        h1 {
+    text-align: center; /* Align heading to the center */
+    font-family: 'Pacifico', cursive; /* Fancy font */
+    font-size: 100px; /* Increase font size */
+    position: fixed; /* Fixed position */
+    top: 50%; /* Position at the vertical center of the viewport */
+    left: 50%; /* Position at the horizontal center of the viewport */
+    transform: translate(-50%, -50%); /* Center the element */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflow */
+    max-width: 50%; /* Limit width to 50% of viewport */
+    z-index: 1; /* Ensure the heading appears above other content */
+}
+span {
+    display: inline-block; /* Display as inline block */
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+}
+.fade-out {
+    opacity: 0; /* Set opacity to 0 for fade out effect */
+}
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Additional CSS for scrolling effect */
+#content {
+    margin-top: 50%; /* Offset to account for the heading height */
+    padding: 20px; /* Add padding to the content */
+}
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+.space-insights {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.space-insights h3 {
+    color: #fff;
+}
+
+.space-insights p {
+    color: #ddd;
+}
+
+.space-insights a {
+    color: #ffd700; /* Yellow color for links */
+    text-decoration: none;
+}
+
+.space-insights a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.space-stories {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.space-stories h3 {
+    color: #fff;
+}
+
+.space-stories p {
+    color: #ddd;
+}
+
+.space-stories a {
+    color: #ffd700; /* Yellow color for links */
+    text-decoration: none;
+}
+
+.space-stories a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.space-quizzes {
+    background-color: #555;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.space-quizzes h3 {
+    color: #fff;
+}
+
+.space-quizzes p {
+    color: #ddd;
+}
+
+.space-quizzes a {
+    color: #ffd700; /* Yellow color for links */
+    text-decoration: none;
+}
+
+.space-quizzes a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 100% / 1.5 Arial;
+/*   background: linear-gradient(135deg, #3e028c -50%, #000 100%); */
+  background-image: linear-gradient(135deg, #380e58 0%, #110f57 25%, #090228 50%, #3d1635 75%, #271a1f 100%);
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+.fixed {
+  position: fixed;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  width: 100vw;
+  top: 50%;
+  font-size: 24px;
+}
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-2px) scale(3);
+  transform: translateZ(-2px) scale(3);
+}
+.parallax__layer--back2 {
+  -webkit-transform: translateZ(-6px) scale(5);
+  transform: translateZ(-6px) scale(5);
+}
+.parallax__layer--back3 {
+  -webkit-transform: translateZ(-12px) scale(6);
+  transform: translateZ(-12px) scale(6);
+}
+
+/* add some padding to force scrollbars */
+.parallax__layer {
+  padding: 100vh 0;
+}
+
+.starfield > * {
+  background-size: 200px 200px;
+  background-image: radial-gradient(
+      2px 2px at 40px 60px,
+      #ccc,
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(2px 2px at 20px 50px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 30px 100px, #eee, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 60px, rgb(0, 255, 0), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 110px 90px, rgb(255, 0, 0), rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 190px 150px, rgb(255, 200, 0), rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+}
+.starfield > * {
+  position: absolute;
+  top: -250%;
+  left: 0;
+  height: 500%;
+  width: 100%;
+}
+
+.starfield span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.starfield span:nth-child(3) {
+  transform: rotate(69deg);
+}
+.starfield span:nth-child(4) {
+  transform: rotate(123deg);
+}
+.galaxy-trekker {
+    background-color: transparent;
+    padding: 50px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.galaxy-trekker {
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.8))url('Images/shooting_star.jpeg') no-repeat center center/cover;
+    background-size: cover; 
+    padding: 50px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.galaxy-trekker:hover {
+    transform: scale(1.05);
+}
+/* Styles for the title */
+.galaxy-trekker h2 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+/* Styles for the features */
+.galaxy-trekker p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+/* Link styles */
+.galaxy-trekker a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+/* Media query for screens smaller than 768px (tablets and mobile devices) */
+@media only screen and (max-width: 768px) {
+    .container {
+      max-width: 90%; /* Adjust container width */
+      margin: 50px auto; /* Center the container */
+    }
+  
+    h1 {
+      font-size: 32px; /* Decrease font size for smaller screens */
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      font-size: 14px; /* Decrease input font size */
+    }
+  
+    button {
+      font-size: 16px; /* Decrease button font size */
+    }
+  
+    .fixed {
+      font-size: 20px; /* Adjust font size for fixed element */
+    }
+  
+    .galaxy-trekker {
+      padding: 20px; /* Adjust padding */
+    }
+  
+    .galaxy-trekker h2 {
+      font-size: 24px; /* Decrease title font size */
+    }
+  
+    .galaxy-trekker p {
+      font-size: 16px; /* Decrease paragraph font size */
+    }
+  }
+  
+  /* Media query for screens smaller than 576px (small mobile devices) */
+  @media only screen and (max-width: 576px) {
+    .container {
+      padding: 10px; /* Adjust padding */
+    }
+  
+    h1 {
+      font-size: 24px; /* Further decrease font size for smaller screens */
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      font-size: 12px; /* Further decrease input font size */
+    }
+  
+    button {
+      font-size: 14px; /* Further decrease button font size */
+    }
+  
+    .fixed {
+      font-size: 18px; /* Further adjust font size for fixed element */
+    }
+  
+    .galaxy-trekker {
+      padding: 10px; /* Further adjust padding */
+    }
+  
+    .galaxy-trekker h2 {
+      font-size: 20px; /* Further decrease title font size */
+    }
+  
+    .galaxy-trekker p {
+      font-size: 14px; /* Further decrease paragraph font size */
+    }
+  }
+  
